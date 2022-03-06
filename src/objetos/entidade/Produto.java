@@ -10,12 +10,20 @@ public class Produto {
     public double valorTotalEstoque (){
         return preço * quantidade;
     }
+
     //Criando método para incluir e calcular a quantidade do produto no estoque.
     public void addProdutos (int quantidade){
         this.quantidade += quantidade;
     }
+
     //Criando método para retirar e calcular a quantidade do produto no estoque.
     public void removeProdutos (int quantidade){
         this.quantidade -= quantidade;
+    }
+
+    //Criando um método toString para imprimir na tela da main os resultados totalmente formatados.
+    public String toString(){
+        return nome + " " + String.format("Quantidade %d ", quantidade) + " R$"
+                + String.format("%.2f ",preço)  + String.format("Valor total R$ %.2f ",valorTotalEstoque());
     }
 }
