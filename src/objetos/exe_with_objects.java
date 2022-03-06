@@ -10,7 +10,7 @@ public class exe_with_objects {
         Locale.setDefault(Locale.US);
         Scanner in = new Scanner(System.in);
 
-        double triangulX, trianguloY, areaX, areaY;
+        double areaX, areaY;
 
         triangulo x, y;
         x = new triangulo();
