@@ -7,7 +7,6 @@ public class maior_valor {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner in = new Scanner(System.in);
-
         System.out.println("Informe os 3 valores: ");
         int a = in.nextInt();
         int b = in.nextInt();
