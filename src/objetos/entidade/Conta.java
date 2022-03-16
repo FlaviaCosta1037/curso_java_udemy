@@ -15,23 +15,10 @@ public class Conta {
         this.titular = titular;
 
     }
-
+    //Construtor com todos os dados
     public Conta(int numero, String titular, Double valor) {
         this.numero = numero;
         this.titular = titular;
-        this.valor = valor;
-
-    }
-    //Construtor com todos os dados
-
-    public Conta(int numero, String titular, Double valor, Double taxa) {
-        this.numero = numero;
-        this.titular = titular;
-        this.valor = valor;
-        this.taxa = taxa;
-    }
-
-    public Conta(Double valor) {
         this.valor = valor;
 
     }
@@ -56,19 +43,18 @@ public class Conta {
         return valor;
     }
 
-    public Double deposito(Double deposito){
-        return this.valor += valor;
+    public Double deposito(Double valorDeposito)
+    {
+        return this.valor += valorDeposito;
     }
 
-    public Double retirada(Double retirada){
-        return this.valor -= valor;
+    public Double retirada(Double valorRetirada)
+    {
+        return this.valor -= (valorRetirada + 5.00);
     }
 
-    public Double saldo(){
-        return this.getValor() + deposito(valor) - retirada(valor);
-    }
-    public void imprimir(int conta, String titular, Double valor){
-        System.out.printf("Conta: %d, Titular: %S, Saldo: R$ %.2f ", this.numero, this.titular, this.getValor());
+    public void imprimir(){
+        System.out.printf("Conta: %d, Titular: %S, Saldo: R$ %.2f ", this.numero, this.titular, this.valor);
     }
 
 }
