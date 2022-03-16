@@ -13,48 +13,46 @@ public class caixa_eletronico {
 
         System.out.println("Informe o numero da conta:");
         int numeroConta = in.nextInt();
+        in.nextLine();
 
         System.out.println("Informe o nome do titular da conta: ");
-        String nomeTitular = in.next();
+        String nomeTitular = in.nextLine();
 
-        Conta conta = new Conta(numeroConta, nomeTitular);
-
+        Conta conta;
         int opcao;
+
         System.out.println("Haverá um deposito inicial? (1)sim, (2) Não");
         opcao = in.nextInt();
 
-        Conta conta1 = new Conta(numeroConta, nomeTitular);
+        conta = new Conta(numeroConta, nomeTitular);
 
         Double valorDeposito = 0.0;
         if (opcao == 1) {
             System.out.println("Informe o valor do depósito: ");
             valorDeposito = in.nextDouble();
-            conta1 = new Conta(numeroConta, nomeTitular, valorDeposito);
+            conta = new Conta(numeroConta, nomeTitular, valorDeposito);
 
         } else if (opcao == 2) {
             valorDeposito = 0.0;
-            conta1 = new Conta(numeroConta, nomeTitular, valorDeposito);
+            conta = new Conta(numeroConta, nomeTitular, valorDeposito);
         }
 
-        conta1.imprimir(numeroConta, nomeTitular, valorDeposito);
+        conta.imprimir();
 
         System.out.println("\nDeposite um valor na conta: ");
         valorDeposito = in.nextDouble();
-        conta1.deposito(valorDeposito);
+        conta.deposito(valorDeposito);
 
         System.out.println("Conta atualizada");
 
-        conta1.imprimir(numeroConta, nomeTitular, conta1.getValor());
+        conta.imprimir();
 
         Double valorRetirada = 0.0;
         System.out.println("\nFaça uma retirada da conta: ");
         valorRetirada = in.nextDouble();
-        conta1.retirada(valorRetirada);
+        conta.retirada(valorRetirada);
 
-        conta1.imprimir(numeroConta, nomeTitular, conta1.saldo());
-
-
-
+        conta.imprimir();
 
     }
 }
