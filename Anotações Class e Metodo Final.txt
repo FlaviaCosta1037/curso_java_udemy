@@ -1,0 +1,18 @@
+Classes e métodos final:
+
+Palavra chave: Final
+
+Classe: Evita que a classe seja herdada
+
+public final classe ContaCorporativa{
+
+Método: Evita que o método seja sobreposto
+
+Motivo da utilização:
+
+Segurança: dependendo das regras de negocio, às vezes é desejável garantir que uma classe nao seja herdada, ou que um método nao seja sobreposto.
+	Geralmente convém acrescentar final em métodos sobrepostos, pois sobreposições múltiplas podem ser porta de entrada para inconsistências.
+
+Performance: Atributos de tipo de uma classe final são analisados de forma mais rápida em tempo de execução.
+ex: String;
+
