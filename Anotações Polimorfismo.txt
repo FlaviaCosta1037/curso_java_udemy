@@ -1,0 +1,6 @@
+Polimorfismo: Muitas formas.
+
+Variáveis do mesmo tipo apontam para objetos de tipos específicos diferentes, tendo assim comportamento diferentes conforme cada tipo específico;
+
+Resumo: Variáveis do mesmo tipo com comportamentos diferentes.
+
