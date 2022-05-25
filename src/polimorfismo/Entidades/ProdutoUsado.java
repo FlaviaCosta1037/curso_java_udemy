@@ -1,23 +1,21 @@
 package polimorfismo.Entidades;
 
-import java.util.Date;
-
 public class ProdutoUsado extends Produto {
-    private Date dataFabricacao;
+    private String dataFabricacao;
 
     public ProdutoUsado(){
 
     }
-    public ProdutoUsado(String nome, double preco, Date dataFabricacao) {
+    public ProdutoUsado(String nome, double preco, String dataFabricacao) {
         super(nome, preco);
         this.dataFabricacao = dataFabricacao;
     }
 
-    public Date getDataFabricacao() {
+    public String getDataFabricacao() {
         return dataFabricacao;
     }
 
-    public void setDataFabricacao(Date dataFabricacao) {
+    public void setDataFabricacao(String dataFabricacao) {
         this.dataFabricacao = dataFabricacao;
     }
     @Override
@@ -25,4 +23,8 @@ public class ProdutoUsado extends Produto {
         return super.etiquetaPreco();
     }
 
+    @Override
+    public String toString() {
+        return getNome() + " (usado) " + getPreco() + " Data de Fabricacão: " + dataFabricacao;
+    }
 }
