@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class aplicacao {
+public class aplicacao_Formas {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner in = new Scanner(System.in);
