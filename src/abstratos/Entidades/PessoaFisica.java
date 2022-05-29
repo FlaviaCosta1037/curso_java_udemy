@@ -1,9 +1,9 @@
 package abstratos.Entidades;
 
-public class PessoaFisica extends Pessoa{
+public class PessoaFisica extends Pessoa {
     private double gastoComSaude;
 
-    public PessoaFisica(){
+    public PessoaFisica() {
         super();
     }
 
@@ -20,9 +20,13 @@ public class PessoaFisica extends Pessoa{
         this.gastoComSaude = gastoComSaude;
     }
 
-    //Continuar no calculo do imposto
+    //Método para calcular imposto
     @Override
     public double CalcularImposto() {
-        return 0;
+        if (getRendaAnual() > 20000.00) {
+            return (getRendaAnual() * 0.25) - (gastoComSaude * 0.5);
+        } else {
+            return (getRendaAnual() * 0.15) - (gastoComSaude * 0.5);
+        }
     }
 }
