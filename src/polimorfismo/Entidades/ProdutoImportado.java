@@ -18,4 +18,8 @@ public class ProdutoImportado extends Produto{
         return super.etiquetaPreco();
     }
 
+    @Override
+    public String toString() {
+        return getNome() + " " + precoTotal() + " TaxaAlfandega : " + taxaAlfandega;
+    }
 }

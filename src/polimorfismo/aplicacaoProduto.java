@@ -1,11 +1,15 @@
-package polimorfismo.Entidades;
+package polimorfismo;
 
-import java.text.DateFormat;
+import polimorfismo.Entidades.Produto;
+import polimorfismo.Entidades.ProdutoImportado;
+import polimorfismo.Entidades.ProdutoUsado;
+
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class aplicacaoProduto {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         Scanner in = new Scanner(System.in);
         Locale.setDefault(Locale.US);
 
@@ -22,7 +26,7 @@ public class aplicacaoProduto {
         //Laço for para atribuição das variáveis
         for(int i = 1; i <= qtdProdutos; i++){
             System.out.printf("\nProduto " + i);
-            System.out.printf("O produto é comum, usado ou importado? c/u/i ");
+            System.out.printf("\nO produto é comum, usado ou importado? c/u/i\n");
             escolha = in.next().charAt(0);
             System.out.print("Nome: ");
             nome = in.next();
@@ -37,10 +41,21 @@ public class aplicacaoProduto {
             } else if(escolha == 'u'){
                 System.out.print("Data de fabricação: ");
                 String leituraData = in.next();
-                DateFormat data = new SimpleDateFormat("dd/MM/yyy");
 
-                //Continar a partir da data.
+                SimpleDateFormat data = new SimpleDateFormat("dd/MM/yyyy");
+                Date dataFab = data.parse(leituraData);
+                data.format(dataFab);
+
+                ProdutoUsado produto = new ProdutoUsado(nome,preco, data.format(dataFab));
+                lista.add(new ProdutoUsado(nome, preco, data.format(dataFab)));
+
+            } else {
+                Produto produto = new Produto(nome,preco);
+                lista.add(new Produto(nome,preco));
             }
+        }
+        for (Produto produtos:lista) {
+            System.out.println(produtos);
         }
     }
 }
