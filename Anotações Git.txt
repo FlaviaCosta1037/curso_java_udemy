@@ -1,0 +1,10 @@
+Você pode corrigir isso fazendo fetch e merge das alterações feitas no branch remote com as alterações que foram feitas localmente:
+
+$ git fetch origin
+# Faz fetch das atualizações feitas em um repositório online
+$ git merge origin YOUR_BRANCH_NAME
+# Faz merge de atualizações feitas online com seu trabalho local
+Ou você pode simplesmente usar git pull para executar ambos os comandos de uma vez:
+
+$ git pull origin YOUR_BRANCH_NAME
+# Captura atualizações online e faz merge delas com seu trabalho local
